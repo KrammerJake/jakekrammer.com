@@ -16,13 +16,19 @@ import {
 import Mousetrap from 'mousetrap';
 import React, { useEffect } from 'react';
 
+// NOTE: This is only used to manually change the GitHub/LinkedIn URLs to usernames
+// After setting this flag to true, I typically take a screenshot and then use
+// https://png2pdf.com/ to generate a PDF. A side effect of this approach is that the
+// text in the PDF is not selectable/copyable, but I actually don't mind that for now.
+const IS_FOR_PDF = false;
+
 // https://chakra-ui.com/docs/features/responsive-styles
-const COLUMN_WIDTH = [100, 150, 250, 300];
+const COLUMN_WIDTH = [100, 150, 250, 305];
 const ITEM_HEADER_FONT_SIZE = [6, 10, 16, 20];
 const SECTION_HEADER_FONT_SIZE = [6, 12, 18, 24];
 const LIST_ITEM_FONT_SIZE = [10, 12, 14, 16];
 const PERSONAL_INFO_FONT_SIZE = [6, 10, 14, 18];
-const NAME_FONT_SIZE = [12, 16, 34, 40];
+const NAME_FONT_SIZE = [12, 16, 34, 46];
 
 type Degree = {
   id: string;
@@ -236,13 +242,13 @@ const Resume = () => {
       <Box w={COLUMN_WIDTH} textAlign="right">
         <Stack spacing="1px" fontSize={PERSONAL_INFO_FONT_SIZE}>
           <Link href="https://github.com/KrammerJake" isExternal>
-            GitHub <ExternalLinkIcon mx="2px" />
+            GitHub{IS_FOR_PDF ? ': KrammerJake' : <ExternalLinkIcon mx="2px" mb='3px' />}
           </Link>
           <Link
             href="https://www.linkedin.com/in/jake-krammer-b2909397/"
             isExternal
           >
-            LinkedIn <ExternalLinkIcon mx="2px" />
+            LinkedIn{IS_FOR_PDF ? ': jake-krammer-b2909397' : <ExternalLinkIcon mx="2px" mb='3px' />}
           </Link>
         </Stack>
       </Box>

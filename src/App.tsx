@@ -16,6 +16,14 @@ import {
 import Mousetrap from 'mousetrap';
 import React, { useEffect } from 'react';
 
+// https://chakra-ui.com/docs/features/responsive-styles
+const COLUMN_WIDTH = [100, 150, 250, 300];
+const ITEM_HEADER_FONT_SIZE = [6, 10, 16, 20];
+const SECTION_HEADER_FONT_SIZE = [6, 12, 18, 24];
+const LIST_ITEM_FONT_SIZE = [6, 10, 12, 18];
+const PERSONAL_INFO_FONT_SIZE = [6, 10, 14, 18];
+const NAME_FONT_SIZE = [12, 16, 34, 40];
+
 type Degree = {
   id: string;
   title: string;
@@ -156,16 +164,16 @@ const getHeaderElement = (first: string, second: string, third: string) => (
     align="center"
     justify="space-between"
     fontWeight="bold"
-    fontSize="lg"
+    fontSize={ITEM_HEADER_FONT_SIZE}
     mb="2"
   >
-    <Box w={350} textAlign="left">
+    <Box w={COLUMN_WIDTH} textAlign="left">
       {first}
     </Box>
-    <Box w={350} textAlign="center">
+    <Box w={COLUMN_WIDTH} textAlign="center">
       <Center>{second}</Center>
     </Box>
-    <Box w={350} textAlign="right">
+    <Box w={COLUMN_WIDTH} textAlign="right">
       {third}
     </Box>
   </HStack>
@@ -174,7 +182,7 @@ const getHeaderElement = (first: string, second: string, third: string) => (
 const getListElement = (description: string[]) => (
   <List spacing="1" pl="4">
     {description.map((descriptionItem: string) => (
-      <ListItem key={`${descriptionItem.substr(0, 10).replace(' ', '-')}`}>
+      <ListItem key={`${descriptionItem.substr(0, 10).replace(' ', '-')}`} fontSize={LIST_ITEM_FONT_SIZE}>
         {`- ${descriptionItem}`}
       </ListItem>
     ))}
@@ -185,7 +193,7 @@ const getTechnologiesElement = (
   technologies: string[],
   technologiesSeparator = ', '
 ) => (
-  <Flex pl="4" py="1" fontWeight="bold">
+  <Flex pl="4" py="1" fontWeight="bold" fontSize={LIST_ITEM_FONT_SIZE}>
     Technologies:
     <Text as="i" ml="2">
       {technologies.join(technologiesSeparator)}
@@ -211,19 +219,19 @@ const Resume = () => {
       fontWeight="semibold"
       fontSize="lg"
     >
-      <Box w={350} textAlign="left">
-        <Stack spacing="1px">
-          <Text>jake.krammer1@gmail.com</Text>
+      <Box w={COLUMN_WIDTH} textAlign="left">
+        <Stack spacing="1px" fontSize={PERSONAL_INFO_FONT_SIZE}>
+          <Text isTruncated>jake.krammer1@gmail.com</Text>
           <Text>(602) 501-5116</Text>
         </Stack>
       </Box>
-      <Box w={350} textAlign="center">
+      <Box w={COLUMN_WIDTH} textAlign="center">
         <Center>
-          <Text fontSize="34px">Jake Krammer</Text>
+          <Text fontSize={NAME_FONT_SIZE}>Jake Krammer</Text>
         </Center>
       </Box>
-      <Box w={350} textAlign="right">
-        <Stack spacing="1px">
+      <Box w={COLUMN_WIDTH} textAlign="right">
+        <Stack spacing="1px" fontSize={PERSONAL_INFO_FONT_SIZE}>
           <Link href="https://github.com/KrammerJake" isExternal>
             GitHub <ExternalLinkIcon mx="2px" />
           </Link>
@@ -246,7 +254,7 @@ const Resume = () => {
 
   const awards = (
     <>
-      <Heading fontSize={24}>Awards</Heading>
+      <Heading fontSize={SECTION_HEADER_FONT_SIZE}>Awards</Heading>
       {divider}
       <Box key="jp-morgan-code-for-good" marginBottom="3">
         {getHeaderElement('1st Place', 'Code for Good Hackathon', 'Oct 2015')}
@@ -259,11 +267,11 @@ const Resume = () => {
 
   return (
     <>
-      <Center px={40} py={20} maxW="95vw" spacing={5}>
+      <Center px={40} py={[20]} maxW="95vw">
         <Stack>
           {personalInfo}
           <Stack>
-            <Heading fontSize={24}>Employment</Heading>
+            <Heading fontSize={SECTION_HEADER_FONT_SIZE}>Employment</Heading>
             {divider}
             {Object.values(JOBS).map((job: Job) => {
               return (
@@ -282,7 +290,7 @@ const Resume = () => {
                 </Box>
               );
             })}
-            <Heading fontSize={24}>Education</Heading>
+            <Heading fontSize={SECTION_HEADER_FONT_SIZE}>Education</Heading>
             {divider}
             {Object.values(DEGREES).map((degree: Degree) => {
               return (

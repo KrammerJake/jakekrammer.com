@@ -196,7 +196,7 @@ const getTechnologiesElement = (
   technologies: string[],
   technologiesSeparator = ', '
 ) => (
-  <Flex pl="4" py="1" fontWeight="bold" fontSize={LIST_ITEM_FONT_SIZE}>
+  <Flex pl="4" pt="1" fontWeight="bold" fontSize={LIST_ITEM_FONT_SIZE}>
     Technologies:
     <Text as="i" ml="2">
       {technologies.join(technologiesSeparator)}
@@ -224,7 +224,7 @@ const Resume = () => {
     >
       <Box w={COLUMN_WIDTH} textAlign="left">
         <Stack spacing="1px" fontSize={PERSONAL_INFO_FONT_SIZE}>
-          <Text isTruncated>jake.krammer1@gmail.com</Text>
+          <a href='mailto:jake.krammer1@gmail.com'><Text isTruncated _hover={{ textDecoration: 'underline' }}>jake.krammer1@gmail.com</Text></a>
           <Text>(602) 501-5116</Text>
         </Stack>
       </Box>
@@ -270,7 +270,7 @@ const Resume = () => {
 
   return (
     <>
-      <Center px={40} py={[20]} maxW="95vw">
+      <Box margin='auto' px={10} py={20} maxW='90%'>
         <Stack>
           {personalInfo}
           <Stack>
@@ -312,7 +312,7 @@ const Resume = () => {
             {awards}
           </Stack>
         </Stack>
-      </Center>
+      </Box>
     </>
   );
 };

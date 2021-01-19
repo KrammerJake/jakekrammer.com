@@ -20,7 +20,7 @@ import React, { useEffect } from 'react';
 const COLUMN_WIDTH = [100, 150, 250, 300];
 const ITEM_HEADER_FONT_SIZE = [6, 10, 16, 20];
 const SECTION_HEADER_FONT_SIZE = [6, 12, 18, 24];
-const LIST_ITEM_FONT_SIZE = [6, 10, 12, 18];
+const LIST_ITEM_FONT_SIZE = [10, 12, 14, 16];
 const PERSONAL_INFO_FONT_SIZE = [6, 10, 14, 18];
 const NAME_FONT_SIZE = [12, 16, 34, 40];
 
@@ -79,10 +79,13 @@ const JOBS: { [jobId: string]: Job } = {
     description: [
       'Securely integrated multiple third-party APIs including GitHub, GitLab, AWS, and Google',
       'Designed reusable and easy-to-use React components as part of our component library',
-      'Developed an LRU cache and tab system that allowed GitKraken to open multiple repositories simultaneously',
-      'Architected a performance monitoring system using a "Canary" machine to report regressions found in staging builds',
-      'Worked directly with product owners, marketing, and sales to develop and launch the GitKraken referrals program',
+      'Developed an LRU cache and tab system that allowed GitKraken to open multiple Git repositories simultaneously',
+      'Architected a performance monitoring system using a "canary" machine to report regressions found in staging builds',
+      'Worked collaboratively with product owners, marketing, and sales to develop and launch the GitKraken Referral Program',
       'Led daily stand-up meetings and communicated status updates and blockers to stakeholders early and often',
+      'Participated in recruiting and marketing events at university career fairs and developer conferences',
+      'Mentored interns and new employees during their onboarding process, often involving pair programming',
+      'Interviewed candidates for software engineering positions',
     ],
     technologies: 'Typescript, Node.js, React, Redux, Electron.js, AWS, mongoDB, Git, GitKraken'.split(
       ', '

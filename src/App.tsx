@@ -26,7 +26,7 @@ const IS_FOR_PDF = false;
 const COLUMN_WIDTH = [100, 150, 250, 305];
 const ITEM_HEADER_FONT_SIZE = [6, 10, 16, 20];
 const SECTION_HEADER_FONT_SIZE = [6, 12, 18, 24];
-const LIST_ITEM_FONT_SIZE = [10, 12, 14, 16];
+const LIST_ITEM_FONT_SIZE = [10, 12, 14, 18];
 const PERSONAL_INFO_FONT_SIZE = [6, 10, 14, 18];
 const NAME_FONT_SIZE = [12, 16, 34, 46];
 
@@ -93,7 +93,7 @@ const JOBS: { [jobId: string]: Job } = {
       'Mentored interns and new employees during their onboarding process, often involving pair programming',
       'Interviewed candidates for software engineering positions',
     ],
-    technologies: 'Typescript, Node.js, React, Redux, Electron.js, AWS, mongoDB, Git, GitKraken'.split(
+    technologies: 'Typescript, Node.js, React, Redux, Electron.js, AWS, mongoDB, Jenkins, Webpack, Git, GitKraken'.split(
       ', '
     ),
   },
@@ -275,51 +275,49 @@ const Resume = () => {
   );
 
   return (
-    <>
-      <Box margin='auto' px={10} py={20} maxW='90%'>
+    <Box margin='auto' px={10} py={20} maxW='1200px'>
+      <Stack>
+        {personalInfo}
         <Stack>
-          {personalInfo}
-          <Stack>
-            <Heading fontSize={SECTION_HEADER_FONT_SIZE}>Employment</Heading>
-            {divider}
-            {Object.values(JOBS).map((job: Job) => {
-              return (
-                <Box key={job.id} marginBottom="3">
-                  {getHeaderElement(
-                    job.role,
-                    job.companyName,
-                    `${job.employmentDateRange.startDateStr} - ${
-                      job.employmentDateRange.endDateStr || 'Present'
-                    }`
-                  )}
-                  {getListElement(job.description)}
-                  {job.technologies && job.technologies.length
-                    ? getTechnologiesElement(job.technologies, ', ')
-                    : null}
-                </Box>
-              );
-            })}
-            <Heading fontSize={SECTION_HEADER_FONT_SIZE}>Education</Heading>
-            {divider}
-            {Object.values(DEGREES).map((degree: Degree) => {
-              return (
-                <Box key={degree.id} marginBottom="3">
-                  {getHeaderElement(
-                    degree.title,
-                    degree.schoolName,
-                    `${degree.enrollmentDateRange.startDateStr} - ${
-                      degree.enrollmentDateRange.endDateStr || 'Present'
-                    }`
-                  )}
-                  {getListElement(degree.description)}
-                </Box>
-              );
-            })}
-            {awards}
-          </Stack>
+          <Heading fontSize={SECTION_HEADER_FONT_SIZE}>Employment</Heading>
+          {divider}
+          {Object.values(JOBS).map((job: Job) => {
+            return (
+              <Box key={job.id} marginBottom="3">
+                {getHeaderElement(
+                  job.role,
+                  job.companyName,
+                  `${job.employmentDateRange.startDateStr} - ${
+                    job.employmentDateRange.endDateStr || 'Present'
+                  }`
+                )}
+                {getListElement(job.description)}
+                {job.technologies && job.technologies.length
+                  ? getTechnologiesElement(job.technologies, ', ')
+                  : null}
+              </Box>
+            );
+          })}
+          <Heading fontSize={SECTION_HEADER_FONT_SIZE}>Education</Heading>
+          {divider}
+          {Object.values(DEGREES).map((degree: Degree) => {
+            return (
+              <Box key={degree.id} marginBottom="3">
+                {getHeaderElement(
+                  degree.title,
+                  degree.schoolName,
+                  `${degree.enrollmentDateRange.startDateStr} - ${
+                    degree.enrollmentDateRange.endDateStr || 'Present'
+                  }`
+                )}
+                {getListElement(degree.description)}
+              </Box>
+            );
+          })}
+          {awards}
         </Stack>
-      </Box>
-    </>
+      </Stack>
+    </Box>
   );
 };
 

@@ -53,7 +53,6 @@ const DEGREES: { [degreeId: string]: Degree } = {
     description: [
       'Undergraduate teaching assistant for CSE 205 (Object-Oriented Programming and Data Structures with Java) ',
       'Capstone Project: Integrating TweetTracker with Humanitarian Data Exchange Data Sets',
-      'GPA: 3.55',
     ],
   },
 };

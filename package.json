@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
-    "@types/mousetrap": "^1.6.5"
+    "@types/mousetrap": "^1.6.5",
+    "prettier": "2.2.1"
   }
 }

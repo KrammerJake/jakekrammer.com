@@ -22,5 +22,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Config
+/src/config/config.json
+
+# How I deploy jakekrammer-resume.netlify.app
 .eslintcache
-.netlify/state.json
+.netlify

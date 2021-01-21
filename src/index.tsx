@@ -1,6 +1,6 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import { Button, ChakraProvider } from '@chakra-ui/react';
 import ReactDOM from 'react-dom';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { DownloadIcon, ExternalLinkIcon } from '@chakra-ui/icons';
 import {
   Box,
   Center,
@@ -275,6 +275,20 @@ const Resume = () => {
     </>
   );
 
+  const footer = (
+    <Center>
+      <Button
+        aria-label='Download Resume'
+        colorScheme='blue'
+        onClick={() => { window.open('https://jakekrammer-resume.netlify.app/resume.pdf', '_blank'); }}
+        value='Resume'
+      >
+        <DownloadIcon />
+        <Text ml={2}>PDF</Text>
+      </Button>
+    </Center>
+  );
+
   return (
     <Box margin='auto' px={10} py={20} maxW='1200px'>
       <Stack>
@@ -317,6 +331,7 @@ const Resume = () => {
           })}
           {awards}
         </Stack>
+        {footer}
       </Stack>
     </Box>
   );

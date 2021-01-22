@@ -19,13 +19,12 @@ import Mousetrap from "mousetrap";
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 
-import { degrees, jobs } from "./config/config.json";
-
-// NOTE: This is only used to manually change the GitHub/LinkedIn URLs to usernames
-// After setting this flag to true, I typically take a screenshot and then use
-// https://png2pdf.com/ to generate a PDF. A side effect of this approach is that the
-// text in the PDF is not selectable/copyable, but I actually don't mind that for now.
-const IS_FOR_PDF = false;
+import {
+  downloadPDFLink,
+  personalInfo,
+  degrees,
+  jobs,
+} from "./config/config.json";
 
 // https://chakra-ui.com/docs/features/responsive-styles
 const COLUMN_WIDTH = [100, 150, 250, 305];
@@ -121,6 +120,7 @@ const Resume = () => {
     };
   }, [colorMode, toggleColorMode]);
 
+  const { name, email, phone, socialUrls } = personalInfo;
   const personalInfoHeader = (
     <HStack
       align="center"
@@ -130,40 +130,33 @@ const Resume = () => {
     >
       <Box w={COLUMN_WIDTH} textAlign="left">
         <Stack spacing="1px" fontSize={PERSONAL_INFO_FONT_SIZE}>
-          <a href="mailto:jake.krammer1@gmail.com">
+          <a href={`mailto:${email}`}>
             <Text isTruncated _hover={{ textDecoration: "underline" }}>
-              jake.krammer1@gmail.com
+              {email}
             </Text>
           </a>
-          <Text>(602) 501-5116</Text>
+          <Text>{phone}</Text>
         </Stack>
       </Box>
       <Box w={COLUMN_WIDTH} textAlign="center">
         <Center>
-          <Text fontSize={NAME_FONT_SIZE}>Jake Krammer</Text>
+          <Text fontSize={NAME_FONT_SIZE}>{name}</Text>
         </Center>
       </Box>
       <Box w={COLUMN_WIDTH} textAlign="right">
         <Stack spacing="1px" fontSize={PERSONAL_INFO_FONT_SIZE}>
-          <Link href="https://github.com/KrammerJake" isExternal>
-            GitHub
-            {IS_FOR_PDF ? (
-              ": KrammerJake"
-            ) : (
+          {socialUrls["github"] && (
+            <Link href={socialUrls["github"]} isExternal>
+              GitHub
               <ExternalLinkIcon mx="2px" mb="3px" />
-            )}
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/jake-krammer-b2909397/"
-            isExternal
-          >
-            LinkedIn
-            {IS_FOR_PDF ? (
-              ": jake-krammer-b2909397"
-            ) : (
+            </Link>
+          )}
+          {socialUrls["linkedin"] && (
+            <Link href={socialUrls["linkedin"]} isExternal>
+              LinkedIn
               <ExternalLinkIcon mx="2px" mb="3px" />
-            )}
-          </Link>
+            </Link>
+          )}
         </Stack>
       </Box>
     </HStack>
@@ -242,10 +235,7 @@ const Resume = () => {
         aria-label="Download Resume"
         colorScheme="blue"
         onClick={() => {
-          window.open(
-            "https://jakekrammer-resume.netlify.app/resume.pdf",
-            "_blank"
-          );
+          window.open(downloadPDFLink, "_blank");
         }}
         value="Resume"
       >

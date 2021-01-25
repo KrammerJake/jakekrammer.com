@@ -29,9 +29,9 @@ import {
 
 // https://chakra-ui.com/docs/features/responsive-styles
 const COLUMN_WIDTH = [100, 150, 250, 305];
-const ITEM_HEADER_FONT_SIZE = [6, 10, 16, 20];
-const SECTION_HEADER_FONT_SIZE = [6, 12, 18, 24];
-const LIST_ITEM_FONT_SIZE = [10, 12, 14, 18];
+const ITEM_HEADER_FONT_SIZE = [8, 10, 16, 20];
+const SECTION_HEADER_FONT_SIZE = [8, 12, 18, 24];
+const LIST_ITEM_FONT_SIZE = [8, 12, 14, 18];
 const PERSONAL_INFO_FONT_SIZE = [6, 10, 14, 18];
 const NAME_FONT_SIZE = [12, 16, 34, 46];
 
@@ -275,7 +275,7 @@ const Resume = () => {
   );
 
   return (
-    <Box margin="auto" px={10} py={20} maxW="1200px">
+    <Box margin="auto" px={[4, 10]} py={[8, 20]} maxW="1200px">
       {personalInfoHeader}
       {employmentSection}
       {educationSection}

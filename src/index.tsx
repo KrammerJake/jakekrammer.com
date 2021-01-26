@@ -20,12 +20,7 @@ import Mousetrap from "mousetrap";
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 
-import {
-  downloadPDFLink,
-  personalInfo,
-  degrees,
-  jobs,
-} from "./config/config.json";
+import { downloadPDFLink, personalInfo, degrees, jobs } from "./resume.json";
 
 // https://chakra-ui.com/docs/features/responsive-styles
 const COLUMN_WIDTH = [100, 150, 250, 305];

@@ -1,0 +1,115 @@
+%% The MIT License (MIT)
+%%
+%% Copyright (c) 2015 Daniil Belyakov
+%%
+%% Permission is hereby granted, free of charge, to any person obtaining a copy
+%% of this software and associated documentation files (the "Software"), to deal
+%% in the Software without restriction, including without limitation the rights
+%% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%% copies of the Software, and to permit persons to whom the Software is
+%% furnished to do so, subject to the following conditions:
+%%
+%% The above copyright notice and this permission notice shall be included in all
+%% copies or substantial portions of the Software.
+%%
+%% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+%% SOFTWARE.
+
+% The font could be set to Windows-specific Calibri by using the 'calibri' option
+\documentclass[]{mcdowellcv}
+
+% For mathematical symbols
+\usepackage{amsmath}
+
+% For GitHub and LinkedIn icons
+\usepackage{fontspec}
+\usepackage{fontawesome}
+
+% Set applicant's personal data for header
+\name{Jake Krammer}
+\address{jake.krammer1@gmail.com \linebreak (602) 492-8778}
+\contacts{\faGithub \hspace{0.05cm} KrammerJake \linebreak \faLinkedin \hspace{0.05cm} jkrammer}
+
+
+\begin{document}
+
+	% Print the header
+	\makeheader
+
+	% Print the content
+	\begin{cvsection}{Employment}
+		\begin{cvsubsection}{Senior Software Developer}{GitKraken}{Aug 2017 - Dec 2020}
+			\begin{itemize}
+				\item Securely integrated multiple third-party APIs including GitHub, GitLab, AWS, and Google
+				\item Designed reusable and easy-to-use React components as part of our component library
+				\item Developed an LRU cache and tab system that allowed GitKraken to open multiple Git repositories simultaneously
+				\item Built a performance monitoring system using a canary machine to report regressions found in staging builds
+				\item Worked with product owners, marketing, and sales to develop and launch the GitKraken Referral Program
+				\item Led daily stand-up meetings and communicated status updates and blockers to stakeholders early and often
+				\item Participated in recruiting and marketing events at university career fairs and developer conferences
+				\item Mentored interns and new employees during their onboarding process, often involving pair programming
+				\item Interviewed candidates for software engineering positions
+				\item \textbf{Technologies: \emph{Typescript, Node.js, React, Redux, Electron.js, AWS, mongoDB, Jenkins, Webpack, Git, GitKraken}}
+			\end{itemize}
+		\end{cvsubsection}
+
+		\begin{cvsubsection}{Software Developer}{RevolutionParts, Inc.}{Sep 2016 - Aug 2017}
+			\begin{itemize}
+				\item Developed a suite of REST APIs to allow internal and external applications to access auto parts data
+				\item Built integrations and internal tooling using eBay, HubSpot, and AWS APIs
+				\item Implemented internal CRM integration with HubSpot
+				\item \textbf{Technologies: \emph{PHP, Node.js, MySQL, AWS, Git, GitHub, Postman, Kibana, SQS}}
+			\end{itemize}
+		\end{cvsubsection}
+
+		\begin{cvsubsection}{Software Developer (Intern)}{Capital One}{Jun 2016 - Aug 2016}
+			\begin{itemize}
+				\item Built microservices to automate performance tests on mobile and web applications
+				\item Developed pipeline to simplify the building, testing, deployment, and documentation of microservices
+				\item Created web application to manage the results of performance tests run on internal applications
+				\item \textbf{Technologies: \emph{Java/Spring, mongoDB, Git, Swagger, Docker, ECS}}
+			\end{itemize}
+		\end{cvsubsection}
+
+		\begin{cvsubsection}{Software Developer (Student)}{Arizona State University}{Oct 2015 - Apr 2016}
+			\begin{itemize}
+				\item Developed a responsive web application to track graduate student progress using Angular and Bootstrap
+				\item Designed database table schemas and used Entity Framework to represent database relationships
+				\item Practiced user-centered design by surveying and interviewing real users and iterating on their feedback
+				\item \textbf{Technologies: \emph{C\#/.NET, Entity Framework, .NET Web API, Bootstrap, AngularJS, Microsoft SQL Server}}
+			\end{itemize}
+		\end{cvsubsection}
+
+		\begin{cvsubsection}{Software Developer (Intern)}{ExxonMobil}{May 2015 - Aug 2015}
+			\begin{itemize}
+				\item Built an internal web application that automated troubleshooting devices on ExxonMobil’s network
+				\item Constructed data warehouse and performed E.T.L. to combine data from log files and internal databases
+				\item Deployed application to IIS
+				\item \textbf{Technologies: \emph{C\#/.NET, Entity Framework, Bootstrap, Microsoft SQL Server, SSIS}}
+			\end{itemize}
+		\end{cvsubsection}
+	\end{cvsection}
+
+	\begin{cvsection}{Education}
+		\begin{cvsubsection}{B.S. in Computer Science}{Arizona State University}{Aug 2012 - Dec 2016}
+			\begin{itemize}
+				\item Undergraduate teaching assistant for CSE 205 (Object-Oriented Programming and Data Structures with Java)
+				\item Capstone Project: Integrating TweetTracker with Humanitarian Data Exchange Data Sets
+			\end{itemize}
+		\end{cvsubsection}
+	\end{cvsection}
+
+	\begin{cvsection}{Awards}
+		\begin{cvsubsection}{1st Place}{Code for Good Hackathon}{Oct 2015}
+			\begin{itemize}
+				\item Won 1st place for developing a website that gamified the Goodwill donation process and displayed real-time updates using Kimonolabs web crawlers
+			\end{itemize}
+		\end{cvsubsection}
+	\end{cvsection}
+
+\end{document}

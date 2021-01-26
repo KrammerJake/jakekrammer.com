@@ -1,0 +1,152 @@
+{
+  "downloadPDFLink": "https://jakekrammer-resume.netlify.app/resume.pdf",
+  "personalInfo": {
+    "name": "Jake Krammer",
+    "email": "jake.krammer1@gmail.com",
+    "phone": "(602) 492-8778",
+    "socialUrls": {
+      "github": "https://github.com/KrammerJake",
+      "linkedin": "https://www.linkedin.com/in/jkrammer/"
+    }
+  },
+  "degrees": {
+    "bs_cs_asu": {
+      "id": "bs_cs_asu",
+      "schoolName": "Arizona State University",
+      "title": "B.S. in Computer Science",
+      "enrollmentDateRange": {
+        "startDateStr": "Aug 2012",
+        "endDateStr": "Dec 2016"
+      },
+      "description": [
+        "Undergraduate teaching assistant for CSE 205 (Object-Oriented Programming and Data Structures with Java) ",
+        "Capstone Project: Integrating TweetTracker with Humanitarian Data Exchange Data Sets"
+      ]
+    }
+  },
+  "jobs": {
+    "gk": {
+      "id": "gk",
+      "role": "Senior Software Developer",
+      "companyName": "GitKraken",
+      "employmentDateRange": {
+        "startDateStr": "Aug 2017",
+        "endDateStr": "Dec 2020"
+      },
+      "description": [
+        "Securely integrated multiple third-party APIs including GitHub, GitLab, AWS, and Google",
+        "Designed reusable and easy-to-use React components as part of our component library",
+        "Developed an LRU cache and tab system that allowed GitKraken to open multiple Git repositories simultaneously",
+        "Architected a performance monitoring system using a 'canary' machine to report regressions found in staging builds",
+        "Worked collaboratively with product owners, marketing, and sales to develop and launch the GitKraken Referral Program",
+        "Led daily stand-up meetings and communicated status updates and blockers to stakeholders early and often",
+        "Participated in recruiting and marketing events at university career fairs and developer conferences",
+        "Mentored interns and new employees during their onboarding process, often involving pair programming",
+        "Interviewed candidates for software engineering positions"
+      ],
+      "technologies": [
+        "Typescript",
+        "Node.js",
+        "React",
+        "Redux",
+        "Electron.js",
+        "AWS",
+        "mongoDB",
+        "Jenkins",
+        "Webpack",
+        "Git",
+        "GitKraken"
+      ]
+    },
+    "rp": {
+      "id": "rp",
+      "role": "Software Developer",
+      "companyName": "RevolutionParts, Inc.",
+      "employmentDateRange": {
+        "startDateStr": "Sep 2016",
+        "endDateStr": "Aug 2017"
+      },
+      "description": [
+        "Developed a suite of REST APIs to allow internal and external applications to access auto parts data",
+        "Built integrations and internal tooling using eBay, HubSpot, and AWS APIs",
+        "Implemented internal CRM integration with HubSpot"
+      ],
+      "technologies": [
+        "PHP",
+        "Node.js",
+        "MySQL",
+        "AWS",
+        "Git",
+        "GitHub",
+        "Postman",
+        "Kibana",
+        "SQS"
+      ]
+    },
+    "cap1": {
+      "id": "cap1",
+      "role": "Software Developer (Intern)",
+      "companyName": "Capital One",
+      "employmentDateRange": {
+        "startDateStr": "Jun 2016",
+        "endDateStr": "Aug 2016"
+      },
+      "description": [
+        "Built microservices to automate performance tests on mobile and web applications",
+        "Developed pipeline to simplify the building, testing, deployment, and documentation of microservices",
+        "Created web application to manage the results of performance tests run on internal applications"
+      ],
+      "technologies": [
+        "Java/Spring",
+        "mongoDB",
+        "Git",
+        "Swagger",
+        "Docker",
+        "ECS"
+      ]
+    },
+    "asu": {
+      "id": "asu",
+      "role": "Software Developer (Student)",
+      "companyName": "Arizona State University",
+      "employmentDateRange": {
+        "startDateStr": "Oct 2015",
+        "endDateStr": "Apr 2016"
+      },
+      "description": [
+        "Developed a responsive web application to track graduate student progress within ASU’s Department of Speech and Hearing",
+        "Designed database table schemas and used Entity Framework to represent database relationships",
+        "Worked closely with product managers and end users to understand product requirements and deliver an engaging user experience"
+      ],
+      "technologies": [
+        "C#/.NET",
+        "Entity Framework",
+        ".NET Web API",
+        "Bootstrap",
+        "AngularJS",
+        "Microsoft SQL Server"
+      ]
+    },
+    "xom": {
+      "id": "xom",
+      "role": "Software Developer (Intern)",
+      "companyName": "ExxonMobil",
+      "employmentDateRange": {
+        "startDateStr": "May 2015",
+        "endDateStr": "Aug 2015"
+      },
+      "description": [
+        "Built an internal web application that automated troubleshooting devices on ExxonMobil’s network",
+        "Constructed a data warehouse and performed E.T.L. to combine data from log files, documents, and internal databases",
+        "Deployed application to IIS"
+      ],
+      "technologies": [
+        "C#/.NET",
+        "Entity Framework",
+        "Bootstrap",
+        "Microsoft SQL Server",
+        "SQL Server Integration Services"
+      ]
+    }
+  }
+}

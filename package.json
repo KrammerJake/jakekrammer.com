@@ -26,7 +26,7 @@
     "generate:pdf": "~/bin/lualatex --output-directory=./public/ --aux-directory=./src/pdf_generator/ ./src/pdf_generator/resume.tex",
     "update-resume": "yarn generate:tex && yarn generate:pdf",
     "deploy-dev": "yarn build && netlify deploy --dir=build",
-    "deploy-prod": "yarn build && netlify deploy --prod --dir=build",
+    "deploy-prod": "yarn build && netlify deploy --dir=build --prod ",
     "yellowlight": "yarn update-resume && yarn deploy-dev",
     "greenlight": "yarn update-resume && yarn deploy-prod",
     "validate:json": "node ./src/validateResumeJSON.js",

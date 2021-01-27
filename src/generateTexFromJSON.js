@@ -4,8 +4,8 @@ const fs = require("fs");
 // Configuration options
 const USE_TABS = true;
 
-const TEMPLATE_PATH = './pdf_generator/resume-template.txt';
-const OUTPUT_PATH = './pdf_generator/resume.tex';
+const TEMPLATE_PATH = `${__dirname}/pdf_generator/resume-template.txt`;
+const OUTPUT_PATH = `${__dirname}/pdf_generator/resume.tex`;
 
 const REPLACEMENT_STRINGS = [
   "%%PERSONAL_INFO_SECTION",
@@ -86,6 +86,8 @@ for (let i = 0; i < REPLACEMENT_STRINGS.length; i++) {
   );
 }
 
+// eslint-disable-next-line no-useless-escape
+texFileTemplateContents = texFileTemplateContents.replace(/C\#/g, 'C\\#');
 const finalTexFileContents = USE_TABS ? texFileTemplateContents.replace(/ {2}/g, '\t') : texFileTemplateContents;
 fs.writeFileSync(OUTPUT_PATH, finalTexFileContents, {
   encoding: "utf-8",

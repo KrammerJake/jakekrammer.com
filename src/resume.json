@@ -19,7 +19,7 @@
         "endDateStr": "Dec 2016"
       },
       "description": [
-        "Undergraduate teaching assistant for CSE 205 (Object-Oriented Programming and Data Structures with Java) ",
+        "Undergraduate teaching assistant for CSE 205 (Object-Oriented Programming and Data Structures with Java)",
         "Capstone Project: Integrating TweetTracker with Humanitarian Data Exchange Data Sets"
       ]
     }
@@ -37,8 +37,8 @@
         "Securely integrated multiple third-party APIs including GitHub, GitLab, AWS, and Google",
         "Designed reusable and easy-to-use React components as part of our component library",
         "Developed an LRU cache and tab system that allowed GitKraken to open multiple Git repositories simultaneously",
-        "Architected a performance monitoring system using a 'canary' machine to report regressions found in staging builds",
-        "Worked collaboratively with product owners, marketing, and sales to develop and launch the GitKraken Referral Program",
+        "Built a performance monitoring system using a canary machine to report regressions found in staging builds",
+        "Worked with product owners, marketing, and sales to develop and launch the GitKraken Referral Program",
         "Led daily stand-up meetings and communicated status updates and blockers to stakeholders early and often",
         "Participated in recruiting and marketing events at university career fairs and developer conferences",
         "Mentored interns and new employees during their onboarding process, often involving pair programming",
@@ -114,9 +114,9 @@
         "endDateStr": "Apr 2016"
       },
       "description": [
-        "Developed a responsive web application to track graduate student progress within ASU’s Department of Speech and Hearing",
+        "Developed a responsive web application to track graduate student progress using Angular and Bootstrap",
         "Designed database table schemas and used Entity Framework to represent database relationships",
-        "Worked closely with product managers and end users to understand product requirements and deliver an engaging user experience"
+        "Practiced user-centered design by surveying and interviewing real users and iterating on their feedback"
       ],
       "technologies": [
         "C#/.NET",
@@ -137,7 +137,7 @@
       },
       "description": [
         "Built an internal web application that automated troubleshooting devices on ExxonMobil’s network",
-        "Constructed a data warehouse and performed E.T.L. to combine data from log files, documents, and internal databases",
+        "Constructed data warehouse and performed ETL to combine data from log files and internal databases",
         "Deployed application to IIS"
       ],
       "technologies": [

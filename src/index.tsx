@@ -15,7 +15,6 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Mousetrap from "mousetrap";
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
@@ -105,12 +104,6 @@ const getTechnologiesElement = (
   </Flex>
 );
 
-// NOTE: This is only used to manually change the GitHub/LinkedIn URLs to usernames
-// After setting this flag to true, I typically take a screenshot and then use
-// https://png2pdf.com/ to generate a PDF. A side effect of this approach is that the
-// text in the PDF is not selectable/copyable, but I actually don't mind that for now.
-const IS_FOR_PDF = false;
-
 const Resume = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -122,7 +115,7 @@ const Resume = () => {
     };
   }, [colorMode, toggleColorMode]);
 
-  const { name, email, phone, socialUrls } = personalInfo;
+  const { name, email, phone, social } = personalInfo;
   const personalInfoHeader = (
     <HStack
       align="center"
@@ -147,37 +140,17 @@ const Resume = () => {
       </Box>
       <Box w={COLUMN_WIDTH} textAlign="right">
         <Stack spacing="1px" fontSize={PERSONAL_INFO_FONT_SIZE}>
-          {socialUrls["github"] && (
-            <Link href={socialUrls["github"]} isExternal>
+          {social["github"] && (
+            <Link href={social["github"].url} isExternal>
               <Flex justifyContent="flex-end">
-                {IS_FOR_PDF ? (
-                  <>
-                    <FaGithub style={{ marginTop: 5, marginRight: 5 }} />
-                    KrammerJake
-                  </>
-                ) : (
-                  <>
-                    GitHub
-                    <ExternalLinkIcon mx="2px" mt="3px" />
-                  </>
-                )}
+                GitHub <ExternalLinkIcon mx="2px" mt="3px" />
               </Flex>
             </Link>
           )}
-          {socialUrls["linkedin"] && (
-            <Link href={socialUrls["linkedin"]} isExternal>
+          {social["linkedin"] && (
+            <Link href={social["linkedin"].url} isExternal>
               <Flex justifyContent="flex-end">
-                {IS_FOR_PDF ? (
-                  <>
-                    <FaLinkedin style={{ marginTop: 5, marginRight: 5 }} />
-                    jkrammer
-                  </>
-                ) : (
-                  <>
-                    LinkedIn
-                    <ExternalLinkIcon mx="2px" mt="3px" />
-                  </>
-                )}
+                LinkedIn <ExternalLinkIcon mx="2px" mt="3px" />
               </Flex>
             </Link>
           )}
@@ -261,7 +234,6 @@ const Resume = () => {
         onClick={() => {
           window.open(downloadPDFLink, "_blank");
         }}
-        value="Resume"
       >
         <DownloadIcon />
         <Text ml={2}>PDF</Text>
@@ -275,7 +247,7 @@ const Resume = () => {
       {employmentSection}
       {educationSection}
       {awardsSection}
-      {!IS_FOR_PDF && footer}
+      {footer}
     </Box>
   );
 };

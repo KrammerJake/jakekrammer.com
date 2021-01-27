@@ -4,9 +4,15 @@
     "name": "Jake Krammer",
     "email": "jake.krammer1@gmail.com",
     "phone": "(602) 492-8778",
-    "socialUrls": {
-      "github": "https://github.com/KrammerJake",
-      "linkedin": "https://www.linkedin.com/in/jkrammer/"
+    "social": {
+      "github": {
+        "url": "https://github.com/KrammerJake",
+        "username": "KrammerJake"
+      },
+      "linkedin": {
+        "url": "https://www.linkedin.com/in/jkrammer/",
+        "username": "jkrammer"
+      }
     }
   },
   "degrees": {

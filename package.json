@@ -22,14 +22,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate:tex": "node ./src/validateResumeJSON.js && node ./src/generateTexFromJSON.js",
+    "generate:tex": "node ./scripts/validateResumeJSON.js && node ./scripts/generateTexFromJSON.js",
     "generate:pdf": "~/bin/lualatex --output-directory=./public/ --aux-directory=./src/pdf_generator/ ./src/pdf_generator/resume.tex",
     "update-resume": "yarn generate:tex && yarn generate:pdf",
     "deploy-dev": "yarn build && netlify deploy --dir=build",
     "deploy-prod": "yarn build && netlify deploy --dir=build --prod ",
     "yellowlight": "yarn update-resume && yarn deploy-dev",
     "greenlight": "yarn update-resume && yarn deploy-prod",
-    "validate:json": "node ./src/validateResumeJSON.js",
+    "validate:json": "node ./scripts/validateResumeJSON.js",
     "scripts": "cat package.json | jq .scripts && echo \"\nYou can run any script by typing: yarn SCRIPT_NAME\""
   },
   "eslintConfig": {

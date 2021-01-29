@@ -154,5 +154,16 @@
         "SQL Server Integration Services"
       ]
     }
+  },
+  "awards": {
+    "code_for_good": {
+      "id": "code_for_good",
+      "columnHeader1": "1st Place",
+      "columnHeader2": "Code for Good Hackathon",
+      "columnHeader3": "Oct 2015",
+      "description": [
+        "Won 1st place for developing a website that gamified the Goodwill donation process and displayed real-time updates using Kimonolabs web crawlers"
+      ]
+    }
   }
 }

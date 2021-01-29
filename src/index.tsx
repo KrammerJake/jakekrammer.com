@@ -19,7 +19,13 @@ import Mousetrap from "mousetrap";
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 
-import { downloadPDFLink, personalInfo, degrees, jobs } from "./resume.json";
+import {
+  downloadPDFLink,
+  personalInfo,
+  degrees,
+  jobs,
+  awards,
+} from "./resume.json";
 
 // https://chakra-ui.com/docs/features/responsive-styles
 const COLUMN_WIDTH = [100, 150, 250, 305];
@@ -30,7 +36,7 @@ const PERSONAL_INFO_FONT_SIZE = [6, 10, 14, 18];
 const NAME_FONT_SIZE = [12, 16, 34, 46];
 
 type Degree = {
-  id: string;
+  id: string; // Used for setting "key" attribute
   title: string;
   schoolName: string;
   enrollmentDateRange: {
@@ -41,7 +47,7 @@ type Degree = {
 };
 
 type Job = {
-  id: string;
+  id: string; // Used for setting "key" attribute
   role: string;
   companyName: string;
   employmentDateRange: {
@@ -51,9 +57,17 @@ type Job = {
   description: string[]; // Bullet points
   technologies?: string[]; // Adds a {technologiesSeparator = 'comma'}-separated list to the bottom
   technologiesSeparator?: string;
-  isInternship?: boolean;
-  isStudentJob?: boolean;
 };
+
+type GenericSection = {
+  id: string; // Used for setting "key" attribute
+  columnHeader1: string;
+  columnHeader2: string;
+  columnHeader3: string;
+  description: string[]; // Bullet points
+};
+
+type Award = GenericSection;
 
 const get3ColumnHeaderElement = (
   first: string,
@@ -180,7 +194,10 @@ const Resume = () => {
             )}
             {getListElement(job.description)}
             {job.technologies && job.technologies.length
-              ? getTechnologiesElement(job.technologies, ", ")
+              ? getTechnologiesElement(
+                  job.technologies,
+                  job.technologiesSeparator
+                )
               : null}
           </Box>
         );
@@ -213,16 +230,18 @@ const Resume = () => {
     <>
       <Heading fontSize={SECTION_HEADER_FONT_SIZE}>Awards</Heading>
       {divider}
-      <Box key="jp-morgan-code-for-good" marginBottom="3">
-        {get3ColumnHeaderElement(
-          "1st Place",
-          "Code for Good Hackathon",
-          "Oct 2015"
-        )}
-        {getListElement([
-          "Won 1st place for developing a website that gamified the Goodwill donation process and displayed real-time updates using Kimonolabs web crawlers",
-        ])}
-      </Box>
+      {Object.values(awards).map((award: Award) => {
+        return (
+          <Box key={award.id} marginBottom="3">
+            {get3ColumnHeaderElement(
+              award.columnHeader1,
+              award.columnHeader2,
+              award.columnHeader3
+            )}
+            {getListElement(award.description)}
+          </Box>
+        );
+      })}
     </>
   );
 

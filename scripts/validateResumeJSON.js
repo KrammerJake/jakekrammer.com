@@ -1,4 +1,4 @@
-const resume = require("./resume.json");
+const resume = require("../src/resume.json");
 const chalk = require("chalk");
 const has = require("lodash.has");
 
@@ -10,7 +10,7 @@ const REQUIRED_TOP_LEVEL_FIELDS = [
   "personalInfo",
   "degrees",
   "jobs",
-  // "awards",
+  "awards",
 ];
 
 const REQUIRED_PERSONAL_INFO_FIELDS = [
@@ -35,6 +35,13 @@ const REQUIRED_JOB_FIELDS = [
   "employmentDateRange.startDateStr",
   "description",
   "technologies",
+];
+
+const REQUIRED_REWARD_FIELDS = [
+  "columnHeader1",
+  "columnHeader2",
+  "columnHeader3",
+  "description",
 ];
 
 let hadErrors = false;
@@ -112,12 +119,29 @@ const validateJobFieldsIfNecessary = () => {
   }
 };
 
+const validateAwardFieldsIfNecessary = () => {
+  if (resume.awards) {
+    const awardKeys = Object.keys(resume.awards);
+    let requiredAwardFields = [];
+    for (let i = 0; i < awardKeys.length; i++) {
+      const awardKey = awardKeys[i];
+      const awardKeyPrefix = `awards.${awardKey}`;
+      requiredAwardFields = [
+        ...requiredAwardFields,
+        ...REQUIRED_REWARD_FIELDS.map((field) => `${awardKeyPrefix}.${field}`),
+      ];
+    }
+    validateRequiredFields(requiredAwardFields);
+  }
+};
+
 const main = () => {
   validateRequiredFields(REQUIRED_TOP_LEVEL_FIELDS);
   validateRequiredFields(REQUIRED_PERSONAL_INFO_FIELDS);
   validateSocialFieldsIfNecessary();
   validateDegreeFieldsIfNecessary();
   validateJobFieldsIfNecessary();
+  validateAwardFieldsIfNecessary();
 };
 
 main();

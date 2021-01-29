@@ -4,8 +4,8 @@ const fs = require("fs");
 // Configuration options
 const USE_TABS = true;
 
-const RESUME_TEMPLATE_PATH = `${__dirname}/../src/pdf_generator/resume-template.txt`;
-const RESUME_OUTPUT_PATH = `${__dirname}/../src/pdf_generator/resume.tex`;
+const RESUME_TEMPLATE_PATH = `${__dirname}/../pdf_generator/resume-template.txt`;
+const RESUME_OUTPUT_PATH = `${__dirname}/../pdf_generator/resume.tex`;
 
 const REPLACEMENT_STRINGS = [
   "%%PERSONAL_INFO_SECTION",

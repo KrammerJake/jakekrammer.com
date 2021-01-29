@@ -18,8 +18,8 @@ yarn-error.log*
 .netlify
 
 # PDF generation auxiliary/log files
-/src/pdf_generator/*.aux
-/src/pdf_generator/*.log
+/pdf_generator/*.aux
+/pdf_generator/*.log
 
 # Ignore the final resume PDF
 /public/resume.pdf

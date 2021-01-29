@@ -47,7 +47,7 @@ yarn && yarn start
 1. Start at `/src/resume.json` and update the contents to your satisfaction.
 2. Once you're finished updating `resume.json`, run `yarn validate:json` to ensure there are no validation errors.
 3. If the JSON is valid, you can now generate the `resume.tex` file by running `generate:tex`.
-4. Once the `resume.tex` file has been created, you can now run `generate:pdf` to create a `resume.pdf` file that will be saved to the `/public` directory. This will make it accessible via `your-site.com/resume.pdf`. NOTE: The `generate:pdf` command relies on `lualatex` existing on your machine and accessible via your $PATH. You can make sure it is installed by downloading [MiKTeX](https://miktex.org/download) to your machine and adding it your $PATH.
+4. Once the `resume.tex` file has been created, you can now run `generate:pdf` to create a `resume.pdf` file that will be saved to the `/public` directory. This will make it accessible via `your-site.com/resume.pdf`. NOTE: The `generate:pdf` command relies on `lualatex` existing at `~/bin/lualatex`. I installed it on my Mac by downloading [MiKTeX](https://miktex.org/download) and following the prompts to install various libraries as I ran the project.
 
 ## Important files
 
@@ -65,7 +65,7 @@ NOTE: The `yarn scripts` command requires [jq](https://stedolan.github.io/jq/) t
     "start": "react-scripts start",
     "build": "react-scripts build",
     "generate:tex": "node ./src/validateResumeJSON.js && node ./src/generateTexFromJSON.js",
-    "generate:pdf": "~/bin/lualatex --output-directory=./public/ --aux-directory=./src/pdf_generator/ ./src/pdf_generator/resume.tex",
+    "generate:pdf": "~/bin/lualatex --output-directory=./public/ --aux-directory=./pdf_generator/ ./pdf_generator/resume.tex",
     "update-resume": "yarn generate:tex && yarn generate:pdf",
     "deploy-dev": "yarn build && netlify deploy --dir=build",
     "deploy-prod": "yarn build && netlify deploy --dir=build --prod",

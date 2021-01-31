@@ -20,6 +20,3 @@ yarn-error.log*
 # PDF generation auxiliary/log files
 /pdf_generator/*.aux
 /pdf_generator/*.log
-
-# Ignore the final resume PDF
-/public/resume.pdf

@@ -260,6 +260,12 @@ const Resume = () => {
     </Center>
   );
 
+  const isOffline = true;
+
+  if (isOffline) {
+    return <h1>Hello world</h1>;
+  }
+
   return (
     <Box margin="auto" px={[4, 10]} py={[8, 20]} maxW="1200px">
       {personalInfoHeader}

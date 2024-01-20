@@ -1,76 +1,70 @@
-# Purpose
+# Getting Started with Create React App
 
-I wanted a simple solution to keep a personal website and PDF updated using a single `resume.json` file.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Acknowledgements
+## Available Scripts
 
-Both the website and generated PDF are based on Gayle Laakmann McDowell's [awesome resume format](https://www.careercup.com/resume). You can also download a [Microsoft Word version](https://careercup.com/static_html/Gayle_McDowell_CareerCup_Sample_Resume.doc) if that is all you're looking for.
+In the project directory, you can run:
 
-### Website
+### `npm start`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and uses [Chakra-UI](https://chakra-ui.com/)'s component library. I highly recommend both tools for React projects.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-NOTE: You can `toggle` dark mode on the website by pressing `t` on your keyboard.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### LaTeX to PDF Resume Generation
+### `npm test`
 
-Huge shoutout to the [dnl-blkv/mcdowell-cv](https://github.com/dnl-blkv/mcdowell-cv) repo for laying the groundwork for
-LaTeX to PDF resume generation. This project would have taken a lot longer if I had to learn LaTeX from scratch. THANK YOU!
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-# Overview
+### `npm run build`
 
-## Website setup for Mac
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-TODO: Include setting up netlify to ease deployment issues?
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-1. Ensure [yarn](https://yarnpkg.com/getting-started/install) is installed globally
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```zsh
-npm install -g yarn
-```
+### `npm run eject`
 
-2. Clone and cd into this repository
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-```zsh
-git clone https://github.com/KrammerJake/jakekrammer.com my_awesome_resume
-cd my_awesome_resume
-```
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-3. Run the website in dev mode
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-```zsh
-yarn && yarn start
-```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## How do I use this?
+## Learn More
 
-1. Start at `/src/resume.json` and update the contents to your satisfaction.
-2. Once you're finished updating `resume.json`, run `yarn validate:json` to ensure there are no validation errors.
-3. If the JSON is valid, you can now generate the `resume.tex` file by running `generate:tex`.
-4. Once the `resume.tex` file has been created, you can now run `generate:pdf` to create a `resume.pdf` file that will be saved to the `/public` directory. This will make it accessible via `your-site.com/resume.pdf`. NOTE: The `generate:pdf` command relies on `lualatex` existing at `~/bin/lualatex`. I installed it on my Mac by downloading [MiKTeX](https://miktex.org/download) and following the prompts to install various libraries as I ran the project.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Important files
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-The most important file in this project is the `/src/resume.json` file. This will contain your raw resume data including
-personal info, degrees, jobs, and awards.
+### Code Splitting
 
-## Important scripts
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-You can view the full list of the available scripts from your terminal by running `yarn scripts` in the project directory.
+### Analyzing the Bundle Size
 
-NOTE: The `yarn scripts` command requires [jq](https://stedolan.github.io/jq/) to be installed.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-```json
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "generate:tex": "node ./src/validateResumeJSON.js && node ./src/generateTexFromJSON.js",
-    "generate:pdf": "~/bin/lualatex --output-directory=./public/ --aux-directory=./pdf_generator/ ./pdf_generator/resume.tex",
-    "update-resume": "yarn generate:tex && yarn generate:pdf",
-    "deploy-dev": "yarn build && netlify deploy --dir=build",
-    "deploy-prod": "yarn build && netlify deploy --dir=build --prod",
-    "yellowlight": "yarn update-resume && yarn deploy-dev",
-    "greenlight": "yarn update-resume && yarn deploy-prod",
-    "validate:json": "node ./src/validateResumeJSON.js",
-  }
-```
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
